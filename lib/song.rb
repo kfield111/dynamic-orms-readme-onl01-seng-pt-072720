@@ -11,7 +11,7 @@ class Song
   def self.column_names
     DB[:conn].results_as_hash = true    #returns results from a SELECT statement as a hash with column names as keys instead of as the typical array.
 
-    sql = "pragma table_info('#{table_name}')"      #Returns an array of hases that describes the table with lots of mostly useless data.  
+    sql = "pragma table_info('#{table_name}')"      #Returns an array of hases that describes the table with lots of mostly useless data.
 
     table_info = DB[:conn].execute(sql)    #Creates a variable and sets it equal to the array of hashes returned by the PRAGMA statement above.
     column_names = []    #creates a variable and sets it equal to an empty array.
@@ -59,6 +59,3 @@ class Song
   end
 
 end
-
-
-
